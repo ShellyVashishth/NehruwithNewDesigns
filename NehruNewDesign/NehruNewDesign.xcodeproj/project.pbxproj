@@ -34,7 +34,6 @@
 		841ACC7A188D45CA004DC4A0 /* b16.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841ACC75188D45CA004DC4A0 /* b16.jpg */; };
 		841ACC7B188D45CA004DC4A0 /* b17.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841ACC76188D45CA004DC4A0 /* b17.jpg */; };
 		841ACC7C188D45CA004DC4A0 /* b18.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841ACC77188D45CA004DC4A0 /* b18.jpg */; };
-		84254ED0188F8227004EF694 /* stripe.png in Resources */ = {isa = PBXBuildFile; fileRef = 84254ECF188F8227004EF694 /* stripe.png */; };
 		842AED44188F91B900E630FC /* Main_iphone4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842AED43188F91B900E630FC /* Main_iphone4.storyboard */; };
 		842AED47188F921000E630FC /* DataProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 842AED46188F921000E630FC /* DataProduct.m */; };
 		842AED49188F967000E630FC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 842AED48188F967000E630FC /* Parse.framework */; };
@@ -69,8 +68,6 @@
 		8439C19518924D5C005EFA7E /* btn-signin.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C17A18924D5C005EFA7E /* btn-signin.png */; };
 		8439C19618924D5C005EFA7E /* btn-signin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C17B18924D5C005EFA7E /* btn-signin@2x.png */; };
 		8439C19718924D5C005EFA7E /* checkout-img-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C17C18924D5C005EFA7E /* checkout-img-bg.png */; };
-		8439C19818924D5C005EFA7E /* checkout-img-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C17D18924D5C005EFA7E /* checkout-img-bg@2x.png */; };
-		8439C19918924D5C005EFA7E /* pro-color-hover-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C17E18924D5C005EFA7E /* pro-color-hover-bg.png */; };
 		8439C19A18924D5C005EFA7E /* pro-size-hover-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C17F18924D5C005EFA7E /* pro-size-hover-bg.png */; };
 		8439C19B18924D5C005EFA7E /* push-pin-vector.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C18018924D5C005EFA7E /* push-pin-vector.png */; };
 		8439C19C18924D5C005EFA7E /* register-hover-bg-text.png in Resources */ = {isa = PBXBuildFile; fileRef = 8439C18118924D5C005EFA7E /* register-hover-bg-text.png */; };
@@ -126,7 +123,6 @@
 		843AD48418978F8B00E20E73 /* textfield_border-half@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843AD48018978F8B00E20E73 /* textfield_border-half@2x.png */; };
 		843AD48518978F8B00E20E73 /* textfield_border.png in Resources */ = {isa = PBXBuildFile; fileRef = 843AD48118978F8B00E20E73 /* textfield_border.png */; };
 		843AD48618978F8B00E20E73 /* textfield_border@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 843AD48218978F8B00E20E73 /* textfield_border@2x.png */; };
-		845B8EAA1898BA3E00AA7D65 /* checkout-img-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B8EA81898BA3E00AA7D65 /* checkout-img-bg.png */; };
 		845B8EAB1898BA3E00AA7D65 /* checkout-img-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B8EA91898BA3E00AA7D65 /* checkout-img-bg@2x.png */; };
 		84821BB0188E3A5C00FCA83C /* TransBGLower.png in Resources */ = {isa = PBXBuildFile; fileRef = 84821BAC188E3A5C00FCA83C /* TransBGLower.png */; };
 		84821BB1188E3A5C00FCA83C /* TransBGLower@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84821BAD188E3A5C00FCA83C /* TransBGLower@2x.png */; };
@@ -774,7 +770,6 @@
 			files = (
 				8439C19A18924D5C005EFA7E /* pro-size-hover-bg.png in Resources */,
 				8439C19018924D5C005EFA7E /* btn-register@2x.png in Resources */,
-				84254ED0188F8227004EF694 /* stripe.png in Resources */,
 				843AD47D1897888B00E20E73 /* transbgadd.png in Resources */,
 				845B8EAB1898BA3E00AA7D65 /* checkout-img-bg@2x.png in Resources */,
 				84821BCD188E8E3500FCA83C /* Down.png in Resources */,
@@ -832,11 +827,9 @@
 				842AED44188F91B900E630FC /* Main_iphone4.storyboard in Resources */,
 				8439C20A18925134005EFA7E /* stripe.png in Resources */,
 				841ACC20188CED71004DC4A0 /* b12.jpg in Resources */,
-				845B8EAA1898BA3E00AA7D65 /* checkout-img-bg.png in Resources */,
 				8439C19B18924D5C005EFA7E /* push-pin-vector.png in Resources */,
 				8439C1C118924EE8005EFA7E /* male@2x.png in Resources */,
 				8439C21B1892533D005EFA7E /* icon-cart.png in Resources */,
-				8439C19818924D5C005EFA7E /* checkout-img-bg@2x.png in Resources */,
 				8439C1C418924EEE005EFA7E /* female.png in Resources */,
 				841ACC79188D45CA004DC4A0 /* b14.jpg in Resources */,
 				841ACC7A188D45CA004DC4A0 /* b16.jpg in Resources */,
@@ -849,7 +842,6 @@
 				8439C19F18924D5C005EFA7E /* sign-green-bg@2x.png in Resources */,
 				8439C18D18924D5C005EFA7E /* btn-checkout.png in Resources */,
 				8439C1C018924EE8005EFA7E /* male.png in Resources */,
-				8439C19918924D5C005EFA7E /* pro-color-hover-bg.png in Resources */,
 				84821BB1188E3A5C00FCA83C /* TransBGLower@2x.png in Resources */,
 				8439C18B18924D5C005EFA7E /* btn-change_password-bg@2x.png in Resources */,
 			);

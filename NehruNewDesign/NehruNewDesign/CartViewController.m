@@ -30,11 +30,14 @@
 {
     [super viewDidLoad];
     
+    UIImageView *imageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"nehru-logo.png"]];
+    self.navigationItem.titleView=imageView;
+    
     iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
 
     isTapped=NO;
-    txtviewdesc.textColor=[UIColor whiteColor];
-//    
+//    txtviewdesc.textColor=[UIColor whiteColor];
+//
 //    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]
 //                                                          initWithTarget:self
 //                                                          action:@selector(handleSingleTap:)];
@@ -91,7 +94,7 @@
         //[UIView setAnimationRepeatAutoreverses:YES];
         
         MViewLower.frame =CGRectMake(0 , 1200,320 , 274);
-        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 90);
+        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 85);
         [UIView commitAnimations];
         isTapped=YES;
         
@@ -107,14 +110,14 @@
         //[UIView setAnimationRepeatAutoreverses:YES];
         if (iOSDeviceScreenSize.height == 480)
         {
-            MViewLower.frame =CGRectMake(0 ,226 ,320 , 274);
+            MViewLower.frame =CGRectMake(0 ,170 ,320 , 274);
         }
         else if(iOSDeviceScreenSize.height==568)
         {
             MViewLower.frame =CGRectMake(0 ,254 ,320 , 274);
         }
         
-        MViewUpper.frame = CGRectMake(0 ,0 , 320, 90);
+        MViewUpper.frame = CGRectMake(0 ,0 , 320, 85);
         [UIView commitAnimations];
         isTapped=NO;
         [self LoadDataInViews];
@@ -131,7 +134,7 @@
         //[UIView setAnimationRepeatAutoreverses:YES];
     
         MViewLower.frame =CGRectMake(0 ,1200 ,320 , 274);
-        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 90);
+        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 85);
         [UIView commitAnimations];
         isTapped=NO;
 }
@@ -148,7 +151,7 @@
 
 -(IBAction)ClickedBackBtn:(id)sender
 {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -182,7 +185,7 @@
         //[UIView setAnimationRepeatAutoreverses:YES];
         
         MViewLower.frame =CGRectMake(0 , 1200,320 , 274);
-        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 90);
+        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 85);
         [UIView commitAnimations];
         isTapped=YES;
     }
@@ -197,14 +200,14 @@
         //[UIView setAnimationRepeatAutoreverses:YES];
         if (iOSDeviceScreenSize.height == 480)
         {
-             MViewLower.frame =CGRectMake(0 ,226 ,320 , 274);
+             MViewLower.frame =CGRectMake(0 ,170 ,320 , 274);
         }
         else if(iOSDeviceScreenSize.height==568)
         {
              MViewLower.frame =CGRectMake(0 ,254 ,320 , 274);
         }
        
-        MViewUpper.frame = CGRectMake(0 ,0 , 320, 90);
+        MViewUpper.frame = CGRectMake(0 ,0 , 320, 85);
         [UIView commitAnimations];
         isTapped=NO;
     }

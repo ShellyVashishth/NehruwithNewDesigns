@@ -34,7 +34,7 @@
     UIImageView *imageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"nehru-logo.png"]];
     self.navigationItem.titleView=imageView;
     
-    self.backgScroll.contentSize=CGSizeMake(320, 600);
+    self.backgScroll.contentSize=CGSizeMake(320, 568);
     
     svos = self.backgScroll.contentOffset;
 }

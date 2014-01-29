@@ -349,8 +349,45 @@
     NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
     [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
+//    [self DeletingCartProductOnSignOut];
+
     [self initialView];
 }
+
+/*-(void)DeletingCartProductOnSignOut
+{
+    NSUserDefaults *userdefualts=[NSUserDefaults standardUserDefaults];
+    NSString *struserId= [userdefualts objectForKey:@"UserId"];
+
+    if(struserId!=NULL){
+        //getting all the products in the database.
+        PFQuery *query = [PFQuery queryWithClassName:@"Cart"];
+        [query whereKey:@"UserId" equalTo:struserId];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (!error) {
+                // The find succeeded.
+                // Do something with the found objects
+                for (PFObject *object in objects) {
+                    
+                    [object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                        if(!error)
+                        {
+                            NSLog(@"Eror ");
+                        }
+                        else
+                        {
+                            NSLog(@"All products deleted");
+                        }
+                    }];
+                }
+                //             self.view.userInteractionEnabled=YES;
+            } else {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
+            }
+        }];
+    }
+}*/
 
 - (BOOL)validateEmailWithString:(NSString*)email
 {

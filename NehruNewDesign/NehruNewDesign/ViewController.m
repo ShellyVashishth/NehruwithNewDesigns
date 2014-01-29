@@ -32,6 +32,10 @@
     [super viewDidLoad];
     iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
     isClicked =NO;
+    
+    UIImageView *imageView=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"nehru-logo.png"]];
+    self.navigationItem.titleView=imageView;
+    
     self.cartArray=[[NSMutableArray alloc]init];
     swiped=0;
     [MViewTextDialog setHidden:YES];
@@ -229,9 +233,9 @@
                 }
             }
             loadCasual=YES;
+            [activity1 setHidden:NO];
+            [activity1 stopAnimating];
             [MMainCollectionView reloadData];
-//            [MFormalCollectionView reloadData];
-//            [activity1 stopAnimating];
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -373,7 +377,7 @@
     if(isColour)
     {
         cell.textLabel.text=[mArrColors objectAtIndex:indexPath.row];
-        cell.textLabel.font=[UIFont fontWithName:@"Calibri" size:12.0f];
+        cell.textLabel.font=[UIFont fontWithName:@"Noteworthy" size:15.0f];
 //        cell.textLabel.textColor = [UIColor colorWithRed:211.0f/256.0f green:45.0f/256.0f blue:0.0f/256.0f alpha:1.0];
         cell.textLabel.textColor=[UIColor lightGrayColor];
         //            [cell addSubview:Tlblcolor];
@@ -382,7 +386,7 @@
     else if(isSize)
     {
         cell.textLabel.text=[mArrSizes objectAtIndex:indexPath.row];
-        cell.textLabel.font=[UIFont fontWithName:@"Calibri" size:12.0f];
+        cell.textLabel.font=[UIFont fontWithName:@"Noteworthy" size:15.0f];
 //        cell.textLabel.textColor = [UIColor colorWithRed:211.0f/256.0f green:45.0f/256.0f blue:0.0f/256.0f alpha:1.0];
         cell.textLabel.textColor=[UIColor lightGrayColor];
     }
@@ -527,7 +531,7 @@
         }
         
 //        MViewLower.frame =CGRectMake(0 ,1200 ,320 , 215);
-        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
+        MViewUpper.frame = CGRectMake(0 ,-200 , 320, 68);
         [UIView commitAnimations];
         isClicked=NO;
     }
@@ -550,7 +554,7 @@
         {
             MViewLower.frame =CGRectMake(0, 244, 320 ,263);
         }
-        MViewUpper.frame = CGRectMake(0 ,49 , 320 , 91);
+        MViewUpper.frame = CGRectMake(0 ,49 , 320 , 68);
         [UIView commitAnimations];
         
         if(loadCasual)
@@ -604,6 +608,8 @@
 //    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
 //    [UIView commitAnimations];
 //    isClicked=NO;
+    
+    [self LoadDataInViews];
 }
 
 - (void)ShowCasualView {
@@ -633,7 +639,7 @@
         MViewLower.frame =CGRectMake(0 ,1200 ,320 , 263);
     }
 
-    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
+    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 68);
     [UIView commitAnimations];
     isClicked=NO;
     
@@ -688,7 +694,7 @@
     {
       MViewLower.frame =CGRectMake(0 ,1200 ,320 , 263);
     }
-     MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
+     MViewUpper.frame = CGRectMake(0 ,-200 , 320, 68);
     [UIView commitAnimations];
     isClicked=NO;
     
@@ -754,7 +760,7 @@
     {
         MViewLower.frame =CGRectMake(0 ,1200 ,320 , 263);
     }
-    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
+    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 68);
     [UIView commitAnimations];
     isClicked=NO;
 }
@@ -780,7 +786,7 @@
     {
         MViewLower.frame =CGRectMake(0 ,1200 ,320 , 263);
     }
-    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
+    MViewUpper.frame = CGRectMake(0 ,-200 , 320,68);
     [UIView commitAnimations];
     isClicked=NO;
 }
@@ -859,7 +865,7 @@
     {
         MViewLower.frame =CGRectMake(0 ,1200 ,320 , 263);
     }
-    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 91);
+    MViewUpper.frame = CGRectMake(0 ,-200 , 320, 68);
 
     [UIView beginAnimations:nil context:NULL];
     
@@ -893,6 +899,8 @@
 }
 
 -(IBAction)ClickedShowMoreImages:(id)sender {
+    [self LoadImages];
+    NSLog(@"Data product name and its Id %@ %@",self.dataproduct.ProductName,self.dataproduct.ProductId);
     [self ShowMoreImages];
 }
 
@@ -1165,16 +1173,19 @@
                     dataproduct1.imgproduct=image;
                 }];
             }
-            [MMainCollectionView reloadData];
-//             self.view.userInteractionEnabled=YES;
             [activity1 setHidden:YES];
             [activity1 stopAnimating];
+            [MMainCollectionView reloadData];
+//             self.view.userInteractionEnabled=YES;
+          
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
     }
+//    [activity1 setHidden:YES];
+//    [activity1 stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning
