@@ -121,7 +121,8 @@
        [alertView dismissWithClickedButtonIndex:0 animated:YES];
       [self performSegueWithIdentifier:@"PushTocheckout" sender:self];}
   }
- [alertView dismissWithClickedButtonIndex:0 animated:YES];}
+ [alertView dismissWithClickedButtonIndex:0 animated:YES];
+}
 
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField

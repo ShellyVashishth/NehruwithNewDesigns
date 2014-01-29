@@ -529,7 +529,7 @@
 //                        }
 //                    }];
     
-    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+     iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
 
     if (iOSDeviceScreenSize.height == 480)
     {

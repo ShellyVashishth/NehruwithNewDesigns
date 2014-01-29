@@ -70,7 +70,7 @@
     [mTblSizes setHidden:YES];
     [mViewColor setHidden:YES];
     [mViewSize setHidden:YES];
-    [activityViewCart setHidden:YES];
+//    [activityViewCart setHidden:YES];
     self.dataproduct.productreqQuantity=1;
   
     [self GetProducts];
@@ -900,6 +900,10 @@
     [self CancelMoreImagesView];
 }
 
+-(IBAction)ClickedBackBtn:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 #pragma  Adding products to the cart.
 
@@ -935,9 +939,6 @@
                 }
             }
             else {
-                [activityViewCart setHidden:NO];
-                [activityViewCart startAnimating];
-                
                 PFQuery *validLoginQuery=[PFQuery queryWithClassName:@"Cart"];
                 [validLoginQuery whereKey:@"RandomProductId" equalTo:randomproductId];
                 [validLoginQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -946,8 +947,6 @@
                         if(objects.count==1){
                             UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"Product Out of stock" message:@"Product not available at store." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:Nil, nil];
                             [alertview show];
-                            [activityViewCart setHidden:YES];
-                            [activityViewCart stopAnimating];
                         }
                         else{
                             PFObject *usrSignUp=[PFObject objectWithClassName:@"Cart"];
@@ -969,8 +968,6 @@
                                     // The find succeeded.
                                     if(succeeded){
                                         self.dataproduct.RandomProductId=randomproductId;
-                                        [activityViewCart setHidden:YES];
-                                        [activityViewCart stopAnimating];
                                     }
                                 }
                                 else {
@@ -1082,6 +1079,13 @@
     //        lvc.dataproduct= [self.arrayOfAllproducts objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:lvc animated:YES];
     }
+        else
+        {
+            UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Cart Is Empty" message:@"Cart is Empty" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:Nil, nil];
+            [alertView show];
+            alertView.tag=567890;
+            
+        }
     }
     else if(iOSDeviceScreenSize.height==568)
     {
@@ -1093,13 +1097,39 @@
             //        lvc.dataproduct= [self.arrayOfAllproducts objectAtIndex:indexPath.row];
             [self.navigationController pushViewController:lvc animated:YES];
         }
+        else
+        {
+            UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Cart Is Empty" message:@"Cart is Empty" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:Nil, nil];
+            [alertView show];
+             alertView.tag=567892;
+        }
     }
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(alertView.tag==567892)
+    {
+        if(buttonIndex ==0)
+        {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        }
+    }
+    else if(alertView.tag==567890)
+    {
+        if(buttonIndex ==0)
+        {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        }
+    }
+}
+
 
 -(void)CartProducts
 {
     NSUserDefaults *userdefualts=[NSUserDefaults standardUserDefaults];
     NSString *struserId= [userdefualts objectForKey:@"UserId"];
+    if(struserId!=NULL){
     //getting all the products in the database.
     PFQuery *query = [PFQuery queryWithClassName:@"Cart"];
     [query whereKey:@"UserId" equalTo:struserId];
@@ -1144,8 +1174,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-   
-    
+    }
 }
 
 - (void)didReceiveMemoryWarning

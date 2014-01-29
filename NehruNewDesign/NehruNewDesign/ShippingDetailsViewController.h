@@ -17,7 +17,6 @@
     IBOutlet UITextField *txtphone;
     IBOutlet UITextField *txtState;
     IBOutlet UITextField *txtCountry;
-    
     IBOutlet UIButton *btnsave;
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *backgScroll;

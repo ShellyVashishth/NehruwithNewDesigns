@@ -37,6 +37,12 @@
     
 }
 
+
+-(IBAction)ClickedBackBtn:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 #pragma mark - Stripe
 
 - (IBAction)completeButtonTapped:(id)sender {
@@ -179,12 +185,6 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
-}
-
-
--(IBAction)ClickedBackBtn:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

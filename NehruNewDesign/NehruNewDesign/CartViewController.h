@@ -36,4 +36,5 @@
 @property (nonatomic,strong) IBOutlet UIScrollView *MScrollView;
 @property(nonatomic,strong)NSMutableArray *cartArray;
 @property(nonatomic,strong)DataProduct *dataproduct;
+-(IBAction)ClickedBackBtn:(id)sender;
 @end

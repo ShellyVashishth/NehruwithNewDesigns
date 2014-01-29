@@ -58,7 +58,6 @@
     
     IBOutlet UIView *mViewColor;
     IBOutlet UIView *mViewSize;
-    IBOutlet UIActivityIndicatorView *activityViewCart;
     IBOutlet UIButton *mBtnInCart;
     IBOutlet UIActivityIndicatorView *activity1;
     BOOL loadCasual;
@@ -84,6 +83,6 @@
 -(IBAction)ClickedSelectColor:(id)sender;
 -(IBAction)ClickedIncreaseQty:(id)sender;
 -(IBAction)ClickedDecreaseQty:(id)sender;
--(IBAction)CartProducts:(id)sender;
+-(void)CartProducts;
 -(void)GetProducts;
 @end

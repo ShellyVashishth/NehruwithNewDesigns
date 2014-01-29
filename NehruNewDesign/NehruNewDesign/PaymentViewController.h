@@ -34,4 +34,5 @@
 
 @property (strong, nonatomic) AFJSONRequestOperation* httpOperation;
 @property (strong, nonatomic) STPCard* stripeCard;
+-(IBAction)ClickedBackBtn:(id)sender;
 @end

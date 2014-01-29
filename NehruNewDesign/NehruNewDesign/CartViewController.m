@@ -146,6 +146,11 @@
     txtviewdesc.text=[NSString stringWithFormat:@"%@",self.dataproduct.productDescription];
 }
 
+-(IBAction)ClickedBackBtn:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
     [MTapDialogView setHidden:NO];
     if (!_MTimer) {

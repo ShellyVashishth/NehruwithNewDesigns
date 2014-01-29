@@ -398,9 +398,15 @@
                     <navigationItem key="navigationItem" id="Q4n-u6-WVl">
                         <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="Aq1-Mh-4gC">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ClickedBackBtn:" destination="vXZ-lx-hvc" id="1Jg-zW-lat"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icon-cart.png" id="4oB-Hn-9jN">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="clickedShowCart:" destination="vXZ-lx-hvc" id="KBU-9O-43s"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -801,7 +807,7 @@
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
             </objects>
-            <point key="canvasLocation" x="-463" y="525"/>
+            <point key="canvasLocation" x="-303" y="525"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="G3d-pm-HDW">
@@ -1007,7 +1013,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Checkout" id="mfY-Yl-JF7">
                         <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="14s-BN-chj">
-                            <color key="tintColor" red="0.8328866332" green="0.16343521899999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="ClickedBackBtn:" destination="eeT-5x-otS" id="g0E-vx-yC4"/>
                             </connections>
@@ -1034,7 +1040,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uHY-fR-RVr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BEg-WJ-yE6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjD-95-oKO">
@@ -1078,7 +1084,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sso-0c-wgi">
-                                        <rect key="frame" x="0.0" y="226" width="320" height="274"/>
+                                        <rect key="frame" x="0.0" y="1200" width="320" height="274"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TransBGViewImages.png" translatesAutoresizingMaskIntoConstraints="NO" id="YiX-Ci-Vgl">
@@ -1094,6 +1100,9 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="gZa-Uu-thD" kind="push" id="s0e-LD-XhP"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Product Descriptiion :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRt-cX-WFR">
                                                 <rect key="frame" x="0.0" y="10" width="175" height="22"/>
@@ -1136,7 +1145,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLY-lf-V79">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                        <rect key="frame" x="0.0" y="-200" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TransBGViewImages.png" translatesAutoresizingMaskIntoConstraints="NO" id="9dv-Ty-lRd">
@@ -1218,7 +1227,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="BQi-Pb-6qz"/>
+                    <navigationItem key="navigationItem" id="BQi-Pb-6qz">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="kX6-Fh-30m">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="MTapDialogView" destination="M1p-zM-2ea" id="FeU-qh-jgk"/>
@@ -1247,7 +1261,7 @@
                         <viewControllerLayoutGuide type="bottom" id="IRJ-C1-IWc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zk5-sg-Oat">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="transbgadd.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGP-eM-RUO">
@@ -1255,7 +1269,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-uu-Vvs">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="484"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SW8-Fq-dOp">
@@ -1407,12 +1421,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5uX-9s-WlY"/>
+                    <navigationItem key="navigationItem" id="5uX-9s-WlY">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="DYY-VO-beQ"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Su6-4S-UdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="535"/>
+            <point key="canvasLocation" x="972" y="525"/>
         </scene>
     </scenes>
     <resources>

@@ -397,7 +397,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="fD4-h3-IdU">
-                        <barButtonItem key="rightBarButtonItem" title="Show Cart" id="Nvc-GD-m3B">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="kql-U2-qoU">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ClickedBackBtn:" destination="kAw-2S-GV6" id="d8w-ae-Lfa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icon-cart.png" id="Nvc-GD-m3B">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="clickedShowCart:" destination="kAw-2S-GV6" id="8op-f7-0IH"/>
                             </connections>
@@ -438,6 +445,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dds-bO-5zt" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Ric-Av-xOj"/>
+                <barButtonItem image="arrow-left.png" id="30v-v7-FL6">
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="890" y="-566"/>
         </scene>
@@ -920,7 +930,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Foy-S6-N1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="779" y="202"/>
+            <point key="canvasLocation" x="871" y="206"/>
         </scene>
         <!--Cart View Controller-->
         <scene sceneID="xnj-Qh-YGH">
@@ -1118,7 +1128,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GFu-6c-ON5"/>
+                    <navigationItem key="navigationItem" id="GFu-6c-ON5">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="VbN-gH-hGf">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ClickedBackBtn:" destination="3Ph-yY-A9D" id="rqR-Vc-zGr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -1137,7 +1154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsN-us-Jq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="-566"/>
+            <point key="canvasLocation" x="1307" y="-566"/>
         </scene>
         <!--Shipping Details View Controller-->
         <scene sceneID="HqZ-na-4YI">
@@ -1254,6 +1271,9 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ClickedBtnSaveDetails:" destination="GNc-K0-0Re" eventType="touchUpInside" id="UcI-48-9ed"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HA-Un-hIp">
                                         <rect key="frame" x="20" y="55" width="145" height="21"/>
@@ -1308,12 +1328,143 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Hy5-f3-6Vk"/>
+                    <navigationItem key="navigationItem" id="Hy5-f3-6Vk">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="hkk-Vp-Gnj">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ClickedBackBtn:" destination="GNc-K0-0Re" id="WMf-m7-kgI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnY-ij-fdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="-561"/>
+            <point key="canvasLocation" x="1786" y="-566"/>
+        </scene>
+        <!--Payment View Controller - Checkout-->
+        <scene sceneID="npp-aZ-RUP">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="DoQ-sP-9nf" customClass="PaymentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gma-DP-YwN"/>
+                        <viewControllerLayoutGuide type="bottom" id="N3q-Iv-wJe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oIe-Qc-Olo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="42" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="OyL-oG-zqw">
+                                <rect key="frame" x="0.0" y="44" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="SWw-4E-xlg">
+                                    <rect key="frame" x="0.0" y="213" width="320" height="105"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sci-zg-ZJc">
+                                            <rect key="frame" x="11" y="50" width="298" height="46"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="16"/>
+                                            <state key="normal" title="Complete" backgroundImage="btn-checkout.png">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="completeButtonTapped:" destination="DoQ-sP-9nf" eventType="touchUpInside" id="H17-VN-AxT"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="We accept Visa, Mastercard, Amex and Discovery." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="Ot8-Pd-I9B">
+                                            <rect key="frame" x="10" y="9" width="300" height="33"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckoutInputCell" id="MS9-bR-ZKw" customClass="RWCheckoutInputCell">
+                                        <rect key="frame" x="0.0" y="119" width="320" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MS9-bR-ZKw" id="Rf8-d4-59N">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Card Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="j1Y-sP-HtY">
+                                                    <rect key="frame" x="20" y="11" width="103" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Required" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="tEp-Hd-FH3">
+                                                    <rect key="frame" x="131" y="6" width="150" height="31"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="j1Y-sP-HtY" id="OUq-4E-KRb"/>
+                                            <outlet property="textField" destination="tEp-Hd-FH3" id="7tb-yn-4rY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CheckoutDisplayCell" id="pW7-Fj-rOl" customClass="RWCheckoutDisplayCell">
+                                        <rect key="frame" x="0.0" y="161" width="320" height="42"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pW7-Fj-rOl" id="8ZC-q2-veH">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Exp. Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-Fh-MxE">
+                                                    <rect key="frame" x="20" y="11" width="103" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Required" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="r7N-9X-Ahn">
+                                                    <rect key="frame" x="161" y="11" width="119" height="21"/>
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="displayLabel" destination="r7N-9X-Ahn" id="3wC-Fs-lDn"/>
+                                            <outlet property="nameLabel" destination="Df5-Fh-MxE" id="DSy-Ta-JmP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="DoQ-sP-9nf" id="414-L7-oiF"/>
+                                    <outlet property="delegate" destination="DoQ-sP-9nf" id="Jsj-gR-eLq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Checkout" id="GSt-hD-LaI">
+                        <barButtonItem key="leftBarButtonItem" image="arrow-left.png" id="fhh-MT-Nr0">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="ClickedBackBtn:" destination="DoQ-sP-9nf" id="r4E-Sg-6NP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="buttonView" destination="SWw-4E-xlg" id="VFR-Wq-J6M"/>
+                        <outlet property="completeButton" destination="sci-zg-ZJc" id="kPP-bw-6nQ"/>
+                        <outlet property="tableView" destination="OyL-oG-zqw" id="Qha-HH-ue4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odm-o8-U2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2247" y="-561"/>
         </scene>
     </scenes>
     <resources>
@@ -1328,6 +1479,7 @@
         <image name="btn-sign_out.png" width="232" height="45"/>
         <image name="btn-signin.png" width="232" height="45"/>
         <image name="camera.png" width="46" height="30"/>
+        <image name="icon-cart.png" width="16" height="14"/>
         <image name="minus.png" width="22" height="22"/>
         <image name="plus.png" width="22" height="22"/>
         <image name="pro-color-hover-bg.png" width="150" height="106"/>

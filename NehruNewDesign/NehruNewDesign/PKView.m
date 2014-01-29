@@ -228,7 +228,7 @@
 - (void)stateMeta
 {
     isInitialState = NO;
-    
+//    CGSize cardNumberSize=[self.cardNumber.form ]
     CGSize cardNumberSize = [self.cardNumber.formattedString sizeWithFont:DefaultBoldFont];
     CGSize lastGroupSize = [self.cardNumber.lastGroup sizeWithFont:DefaultBoldFont];
     CGFloat frameX = self.cardNumberField.frame.origin.x - (cardNumberSize.width - lastGroupSize.width);
