@@ -61,6 +61,8 @@
     IBOutlet UIButton *mBtnInCart;
     IBOutlet UIActivityIndicatorView *activity1;
     BOOL loadCasual;
+    
+    IBOutlet UILabel *lblprdqtyChk;
 //
 }
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;

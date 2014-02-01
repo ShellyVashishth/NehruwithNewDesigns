@@ -352,7 +352,10 @@
 //    [self DeletingCartProductOnSignOut];
 
     [self initialView];
+    
+
 }
+
 
 /*-(void)DeletingCartProductOnSignOut
 {

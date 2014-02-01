@@ -18,9 +18,10 @@
     IBOutlet UITextField *txtState;
     IBOutlet UITextField *txtCountry;
     IBOutlet UIButton *btnsave;
+    
+    CGSize iOSDeviceScreenSize;
 }
 @property (strong, nonatomic) IBOutlet UIScrollView *backgScroll;
 -(IBAction)ClickedBtnSaveDetails:(id)sender;
 -(IBAction)ClickedBackBtn:(id)sender;
-
 @end

@@ -379,7 +379,7 @@
         cell.textLabel.text=[mArrColors objectAtIndex:indexPath.row];
         cell.textLabel.font=[UIFont fontWithName:@"Noteworthy" size:15.0f];
 //        cell.textLabel.textColor = [UIColor colorWithRed:211.0f/256.0f green:45.0f/256.0f blue:0.0f/256.0f alpha:1.0];
-        cell.textLabel.textColor=[UIColor lightGrayColor];
+        cell.textLabel.textColor=[UIColor blackColor];
         //            [cell addSubview:Tlblcolor];
     }
     
@@ -388,7 +388,7 @@
         cell.textLabel.text=[mArrSizes objectAtIndex:indexPath.row];
         cell.textLabel.font=[UIFont fontWithName:@"Noteworthy" size:15.0f];
 //        cell.textLabel.textColor = [UIColor colorWithRed:211.0f/256.0f green:45.0f/256.0f blue:0.0f/256.0f alpha:1.0];
-        cell.textLabel.textColor=[UIColor lightGrayColor];
+        cell.textLabel.textColor=[UIColor blackColor];
     }
     return cell;
 }
@@ -577,6 +577,7 @@
 
 -(void)LoadDataInViews
 {
+    
     lblproductName.text=self.dataproduct.ProductName;
     lblpriceOfProduct.text=[NSString stringWithFormat:@"$%0.2f",self.dataproduct.productUnitprice];
     lblProductQuantity.text=[NSString stringWithFormat:@"%d",self.dataproduct.productreqQuantity];
@@ -591,8 +592,21 @@
     {
         lblcategory.text=@"Casual";
     }
-    [self LoadImages];
-    [self GetAllProductsFromCart:self.dataproduct.ProductId];
+    [self LoadImages];[self GetAllProductsFromCart:self.dataproduct.ProductId];
+}
+
+-(void)Checkqty
+{
+    if([self CheckProductQuantity])
+    {
+        lblprdqtyChk.text=@"Product is available";
+        NSLog(@"Product is available");
+    }
+    else
+    {
+        lblprdqtyChk.text=@"Product is not available";
+        NSLog(@"Product is not available");
+    }
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -929,6 +943,7 @@
         if(struserId ==NULL)
         {
             UIAlertView *alertColor = [[UIAlertView alloc]initWithTitle:@"Login Required" message:@"First Login to add products into cart." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            alertColor.tag=3423847;
             [alertColor show];
         }
         else
@@ -954,6 +969,7 @@
                         // The find succeeded.
                         if(objects.count==1){
                             UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"Product Out of stock" message:@"Product not available at store." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:Nil, nil];
+                            alertview.tag=1028383;
                             [alertview show];
                         }
                         else{
@@ -997,6 +1013,8 @@
 
 -(BOOL)CheckProductQuantity
 {
+    
+    NSLog(@"Data product name %@",self.dataproduct.ProductName);
     NSInteger getTotalQty=0;
     NSLog(@"Array of cart products %@",self.productArrayInCart);
     for (DataProduct* product in self.productArrayInCart) {
@@ -1021,6 +1039,7 @@
 //Check the parse database to see if the productQuantity is available or not for this product.
 -(void)GetAllProductsFromCart:(NSString *)productId
 {
+    __block int count1=0;
     self.productArrayInCart=[[NSMutableArray alloc]init];
     //getting all the products in the database.
     PFQuery *query = [PFQuery queryWithClassName:@"Cart"];
@@ -1030,6 +1049,8 @@
             // The find succeeded.
             // Do something with the found objects
             for (PFObject *object in objects) {
+                
+                count1++;
                 //getting the category Name and Object Id's
                 DataProduct *dataproduct1=[[DataProduct alloc]init];
                 dataproduct1.ProductId=object[@"ProductId"];
@@ -1057,6 +1078,11 @@
                     UIImage *image = [UIImage imageWithData:data];
                     dataproduct1.imgproduct=image;
                 }];
+                
+                if(count1 ==[objects count])
+                {
+                    [self Checkqty];
+                }
             }
             NSLog(@"Products available on the Cart table %@",self.productArrayInCart);
         } else {
@@ -1064,6 +1090,8 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+  
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender
@@ -1130,6 +1158,21 @@
             [alertView dismissWithClickedButtonIndex:0 animated:YES];
         }
     }
+    
+    else if(alertView.tag==1028383)
+    {
+        if(buttonIndex==0)
+        {
+            [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        }
+    }
+    
+    else if(alertView.tag==3423847)
+    {
+         [alertView dismissWithClickedButtonIndex:0 animated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    [alertView dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 
